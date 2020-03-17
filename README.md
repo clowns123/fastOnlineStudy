@@ -650,4 +650,65 @@ footer address a{
       }
       ```
 
-   2. 
+   2. ```css
+      .item:nth-child(1) {
+          grid-column: 1 / 3;
+          grid-row: 1 / 3;
+      }
+      
+      .item:nth-child(2) {
+          grid-row: 1 / 3;
+      }
+      
+      .item:nth-child(4) {
+          grid-row: 4 / 5;
+          grid-column: -1 / -3;
+      }
+      ```
+   
+   3. ![image-20200317201224255](https://user-images.githubusercontent.com/50760015/76850890-a66b1580-688b-11ea-883b-fdde7d672708.png)
+   
+   4. grid는 맨 위는 row의 1번 선 맨 왼쪽은 column의 1번 선이다.
+   
+   5. 음수값은 각각 맨 아래 맨 오른쪽이 시작점이다.
+   
+4. grid-template-areas
+
+   1. 3X3의 grid일때
+
+      1. header header header
+      2. main  main  aside
+      3. footer footer footer
+
+   2. ```css
+      .container{
+          display:grid;
+          grid-template-rows: repeat(3, 100px);
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas: 
+          "header header header"
+          "main main aside"
+          "footer footer footer";
+      }
+      
+      .item{
+          border: 10px solid red;
+      }
+      
+      .item:nth-child(1){
+          grid-area: header;
+      }
+      .item:nth-child(2){
+          grid-area: main;
+      }
+      .item:nth-child(3){
+          grid-area: aside;
+      }
+      .item:nth-child(4){
+          grid-area: footer;
+      }
+      
+      ```
+
+   3. ![image-20200317202902976](https://user-images.githubusercontent.com/50760015/76852081-f3e88200-688d-11ea-8668-e8f67a2ec3cd.png)
+
