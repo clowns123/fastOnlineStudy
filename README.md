@@ -711,4 +711,35 @@ footer address a{
       ```
 
    3. ![image-20200317202902976](https://user-images.githubusercontent.com/50760015/76852081-f3e88200-688d-11ea-8668-e8f67a2ec3cd.png)
+   
+5. row-gap, column-gap
 
+   1. 한 줄의 간격의 크기를 정한다.
+   2. gap : row-gap column-gap으로 사용가능하다.
+   3. 각 속성 앞에 grid가 붙어있는 경우도 있는데 현재는 사용하지 않아도 되지만 일부 버전 브라우저의 지원을 위해 grid-의 사용을 고려할 수 있다.
+   
+6. gird-auto-rows, gird-auto-column
+
+   1. 암시적 행의 크기를 정의한다.
+   2. 명시적 행 밖에 정의했을 때의 크기를 지정할 수 있다.
+   
+7. gird-auto-flow
+
+   1. 배치하지 않은 아이템을 어떤 방식으로 자동 배치 알고리즘으로 처리할것인가
+      1. row : 각 행 축을 따라
+      2. column : 각 열 축을 따라
+      3. row dense : 각 행 축을 따라 빈 영역을 메우면서
+      4. column dense : 각 열 축을 따라 빈 영역을 메우면서
+
+8. grid-template-rows, grid-template-rows
+
+   1. 명시적 크기와 라인의 이름 정의
+      1. grid-template-rows: [선이름] 1행크기, 2행크기 [선이름]
+   2. fr(공간비율) 과 repeat함수 사용가능
+      1. 12개의 행을 만들때 하나하나 정의 X
+      2. grid-template-columns: repeat(12, 100px)
+         1. 12개의 행을 100px
+
+9. gird-row(grid-row-start, grid-row-end의 단축속성)
+
+   1. /로 구분한다.
