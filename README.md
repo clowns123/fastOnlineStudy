@@ -639,18 +639,22 @@ footer address a{
    1. grid-template-columns : 열의 크기 정의, grid-template-rows: 행의 크기 정의
       1. 동시에 라인의 이름 정의 가능
       2. fr 단위를 사용 가능
+         1. 비율을 의밓마
       3. repeat() 함수를 사용 가능
+         1. repeat(반복할 횟수, 반복할 단위)
 
-3. grid-column
+3. grid-column, grid-row
 
-   1. ```css
+   1. 특정 아이템을 위치시키기 
+   
+   2. ```css
       .item{
           grid-row: grid-row-start: 열 위치 / grid-row-end: 열 위치;
           grid-column: grid-column-start: 행 위치 / grid-column-end: 행 위치;
-      }
+   }
       ```
-
-   2. ```css
+   
+   3. ```css
       .item:nth-child(1) {
           grid-column: 1 / 3;
           grid-row: 1 / 3;
@@ -666,11 +670,11 @@ footer address a{
       }
       ```
    
-   3. ![image-20200317201224255](https://user-images.githubusercontent.com/50760015/76850890-a66b1580-688b-11ea-883b-fdde7d672708.png)
+   4. ![image-20200317201224255](https://user-images.githubusercontent.com/50760015/76850890-a66b1580-688b-11ea-883b-fdde7d672708.png)
    
-   4. grid는 맨 위는 row의 1번 선 맨 왼쪽은 column의 1번 선이다.
+   5. grid는 맨 위는 row의 1번 선 맨 왼쪽은 column의 1번 선이다.
    
-   5. 음수값은 각각 맨 아래 맨 오른쪽이 시작점이다.
+   6. 음수값은 각각 맨 아래 맨 오른쪽이 시작점이다.
    
 4. grid-template-areas
 
@@ -711,18 +715,18 @@ footer address a{
       ```
 
    3. ![image-20200317202902976](https://user-images.githubusercontent.com/50760015/76852081-f3e88200-688d-11ea-8668-e8f67a2ec3cd.png)
-   
+
 5. row-gap, column-gap
 
    1. 한 줄의 간격의 크기를 정한다.
    2. gap : row-gap column-gap으로 사용가능하다.
    3. 각 속성 앞에 grid가 붙어있는 경우도 있는데 현재는 사용하지 않아도 되지만 일부 버전 브라우저의 지원을 위해 grid-의 사용을 고려할 수 있다.
-   
+
 6. gird-auto-rows, gird-auto-column
 
    1. 암시적 행의 크기를 정의한다.
    2. 명시적 행 밖에 정의했을 때의 크기를 지정할 수 있다.
-   
+
 7. gird-auto-flow
 
    1. 배치하지 않은 아이템을 어떤 방식으로 자동 배치 알고리즘으로 처리할것인가
@@ -742,4 +746,12 @@ footer address a{
 
 9. gird-row(grid-row-start, grid-row-end의 단축속성)
 
-   1. /로 구분한다.
+   1. /로 구분한다.					
+   2. span이  start에 있는경우 end값부터 span만큼 올라오고
+   3. span이 end에 있는경우 start부터 span 만큼 내려간다.
+
+10. grid-area
+
+    1. grid-row-start, grid-row-end, gird-column-start, gird-column-end의 단축속성이다
+    2. 혹은 grid-template-area가 참조할 영역 이름 설정이 가능하다.
+    3. 단 이름을 설정하면 gird-row와  gird -column을 사용 불가능
